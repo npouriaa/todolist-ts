@@ -1,4 +1,4 @@
-import ListItem from "./ListItem";
+import ListItem from "./TodoItem";
 
 interface List {
   list: ListItem[];
