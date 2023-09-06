@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Work+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #171723;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purple-section {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 300px;
+  background-color: #671bff;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  padding: 10px;
+}
+
+header {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+
+.add-todo {
+  display: flex;
+  border-radius: 15px;
+  height: 60px;
+  width: 100%;
+  background-color: #24273d;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+button {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn {
+  border: 1px solid #cccccc82;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.add-input {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  width: 65%;
+  height: 70%;
+  outline: none;
+}
+
+.todos-con {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 30px;
+  color: #fff;
+  height: 600px;
+  background-color: #24273d;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  margin-top: 15px;
+}
+
+li {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-con {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border: 1px solid #cccccc82;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-con span {
+  width: 34px;
+  height: 34px;
+}
+
+.checkbox:checked + span {
+  background-color: #671bff;
+}
+
+.todo-text {
+  width: 80%;
+  display: flex;
+  font-size: 18px;
+  padding: 5px;
+  align-items: center;
+  height: 100%;
+}
+
+.checkbox:checked + .todo-text {
+  text-decoration: overline;
+}
+
+.remove-todo-btn {
+  color: red;
+  height: 30px;
+  width: 30px;
+}
+
+@media (min-width: 360px) {
+  .container {
+    width: 340px;
+  }
+  .add-input{
+    font-size: 14px;
+  }
+  .clear-btn {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 641px) {
+  .container {
+    width: 600px;
+  }
+  .add-input{
+    font-size: 18px;
+  }
+  .clear-btn {
+    font-size: 18px;
+  }
+}
