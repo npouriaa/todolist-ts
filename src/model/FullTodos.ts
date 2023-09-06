@@ -1,20 +1,20 @@
-import ListItem from "./TodoItem";
+import TodoItem from "./TodoItem";
 
 interface List {
-  list: ListItem[];
+  list: TodoItem[];
   load(): void;
   save(): void;
   clearList(): void;
-  addTodo(todoObj: ListItem): void;
+  addTodo(todoObj: TodoItem): void;
   removeTodo(id: string): void;
 }
 
-export default class FullList implements List {
-  static instance: FullList = new FullList();
+export default class FullTodos implements List {
+  static instance: FullTodos = new FullTodos();
 
-  private constructor(private _list: ListItem[] = []) {}
+  private constructor(private _list: TodoItem[] = []) {}
 
-  get list(): ListItem[] {
+  get list(): TodoItem[] {
     return this._list;
   }
 
@@ -25,12 +25,12 @@ export default class FullList implements List {
       JSON.parse(storedTodos);
 
     parsedTodos.forEach((todoObj) => {
-      const newTodoItem = new ListItem(
+      const newTodoItem = new TodoItem(
         todoObj._id,
         todoObj._item,
         todoObj._checked
       );
-      FullList.instance.addTodo(newTodoItem);
+      FullTodos.instance.addTodo(newTodoItem);
     });
   }
 
@@ -43,7 +43,7 @@ export default class FullList implements List {
     this.save();
   }
 
-  addTodo(todoObj: ListItem): void {
+  addTodo(todoObj: TodoItem): void {
     this._list.push(todoObj);
     this.save();
   }

@@ -90,7 +90,6 @@ button {
   border-radius: 15px;
   padding: 30px;
   color: #fff;
-  height: 600px;
   background-color: #24273d;
 }
 
@@ -98,6 +97,9 @@ ul {
   width: 100%;
   list-style: none;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 li {
