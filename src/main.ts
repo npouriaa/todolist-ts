@@ -14,8 +14,8 @@ const initApp = (): void => {
     const newEntryText: string = addInput.value.trim();
     if (!newEntryText.length) return;
 
-    const todoId: number = fullTodos.list.length
-      ? parseInt(fullTodos.list[fullTodos.list.length - 1].id) + 1
+    const todoId: number = fullTodos.todos.length
+      ? parseInt(fullTodos.todos[fullTodos.todos.length - 1].id) + 1
       : 1;
 
     const newTodo = new TodoItem(todoId.toString(), newEntryText);

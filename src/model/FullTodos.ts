@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 
-interface List {
-  list: TodoItem[];
+interface Todos {
+  todos: TodoItem[];
   load(): void;
   save(): void;
   clearList(): void;
@@ -9,25 +9,23 @@ interface List {
   removeTodo(id: string): void;
 }
 
-export default class FullTodos implements List {
+export default class FullTodos implements Todos {
   static instance: FullTodos = new FullTodos();
+  constructor(private _todos: TodoItem[] = []) {}
 
-  private constructor(private _list: TodoItem[] = []) {}
-
-  get list(): TodoItem[] {
-    return this._list;
+  get todos(): TodoItem[] {
+    return this._todos;
   }
 
   load(): void {
     const storedTodos: string | null = localStorage.getItem("myTodos");
     if (typeof storedTodos !== "string") return;
-    const parsedTodos: { _id: string; _item: string; _checked: boolean }[] =
+    const parsedTodos: { _id: string; _todo: string; _checked: boolean }[] =
       JSON.parse(storedTodos);
-
     parsedTodos.forEach((todoObj) => {
       const newTodoItem = new TodoItem(
         todoObj._id,
-        todoObj._item,
+        todoObj._todo,
         todoObj._checked
       );
       FullTodos.instance.addTodo(newTodoItem);
@@ -35,21 +33,21 @@ export default class FullTodos implements List {
   }
 
   save(): void {
-    localStorage.setItem("myTodos", JSON.stringify(this._list));
+    localStorage.setItem("myTodos", JSON.stringify(this._todos));
   }
 
   clearList(): void {
-    this._list = [];
+    this._todos = [];
     this.save();
   }
 
   addTodo(todoObj: TodoItem): void {
-    this._list.push(todoObj);
+    this._todos.push(todoObj);
     this.save();
   }
 
   removeTodo(id: string): void {
-    this._list = this._list.filter((todo) => todo.id !== id);
+    this._todos = this._todos.filter((todo) => todo.id !== id);
     this.save();
   }
 }

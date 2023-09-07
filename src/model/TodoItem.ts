@@ -1,34 +1,37 @@
 export interface Item {
-    id : string,
-    item : string,
-    checked : boolean
+  id: string;
+  todo: string;
+  checked: boolean;
 }
 
 export default class TodoItem implements Item {
-    constructor (
-        private _id : string = '',
-        private _item : string = '',
-        private _checked : boolean = false
-    ){}
+  constructor(
+    private _id: string = "",
+    private _todo: string = "",
+    private _checked: boolean = false
+  ) {}
 
-    get id(): string {
-        return this._id
-    }
-    set id(id : string) {
-        this._id =id
-    }
+  //get and set for id
+  get id(): string {
+    return this._id;
+  }
+  set id(id: string) {
+    this._id = id;
+  }
 
-    get item(): string {
-        return this._item
-    }
-    set item(item : string) {
-        this._item =item
-    }
+  //get and set for todo
+  get todo(): string {
+    return this._todo;
+  }
+  set todo(todo: string) {
+    this._todo = todo;
+  }
 
-    get checked(): boolean {
-        return this._checked
-    }
-    set checked(checked : boolean) {
-        this._checked =checked
-    }
+  //get and set for checked
+  get checked(): boolean {
+    return this._checked;
+  }
+  set checked(checked: boolean) {
+    this._checked = checked;
+  }
 }

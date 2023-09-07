@@ -19,7 +19,7 @@ export default class TodosTemplate implements DOMTodos {
   render(fullTodos: FullTodos): void {
     this.clear();
 
-    fullTodos.list.forEach((todo) => {
+    fullTodos.todos.forEach((todo) => {
       const li = document.createElement("li") as HTMLLIElement;
 
       const check = document.createElement("input") as HTMLInputElement;
@@ -41,7 +41,7 @@ export default class TodosTemplate implements DOMTodos {
 
       const todoText = document.createElement("div") as HTMLDivElement;
       todoText.className = "todo-text";
-      todoText.textContent = todo.item;
+      todoText.textContent = todo.todo;
       li.append(todoText);
 
       const removeBtn = document.createElement("button") as HTMLButtonElement;
