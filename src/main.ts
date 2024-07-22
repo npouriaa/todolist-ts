@@ -31,6 +31,12 @@ form.addEventListener("submit", (e) => {
 function addListItem(task: Task) {
   const item = document.createElement("li");
   const label = document.createElement("label");
+  const deleteBtn = document.createElement("button")
+  deleteBtn.addEventListener("click" , () => {
+    const filteredArray = loadTasks().filter(i => i.id !== task.id)
+    saveTasks(filteredArray)
+    list?.removeChild(item);
+  })
   const checkBox = document.createElement("input");
   checkBox.addEventListener("change", () => {
     task.completed = checkBox.checked;
@@ -38,13 +44,15 @@ function addListItem(task: Task) {
   });
   checkBox.type = "checkbox";
   checkBox.checked = task.completed;
-  label.append(checkBox, task.title);
+  deleteBtn.textContent = "Delete task"
+  label.append(checkBox, task.title , deleteBtn);
   item.append(label);
   list?.append(item);
 }
 
-function saveTasks() {
-  localStorage.setItem("TASKS", JSON.stringify(tasks));
+function saveTasks(tasksArray = tasks) {
+  localStorage.setItem("TASKS", JSON.stringify(tasksArray));
+  loadTasks()
 }
 
 function loadTasks(): Task[] {
