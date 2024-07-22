@@ -1,19 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      62deg,
+      rgba(1, 95, 183, 0.9732216701223994) 13%,
+      rgba(255, 122, 151, 0.5) 4%
+    ),
+    linear-gradient(
+      44deg,
+      rgba(0, 43, 99, 0.07922090238615942) 39%,
+      rgba(242, 140, 143, 0.5) 18%
+    ),
+    linear-gradient(
+      118deg,
+      rgba(84, 202, 242, 0.03152997265339608) 40%,
+      rgba(247, 155, 187, 0.5) 54%
+    ),
+    linear-gradient(
+      58deg,
+      rgba(90, 90, 237, 0.16144443572260592) 83%,
+      rgba(249, 156, 142, 0.5) 23%
+    );
+  background-blend-mode: normal, lighten, multiply, hard-light;
+  overflow: hidden;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .container {
-  padding: 1rem;
+  padding: 2rem;
+  justify-content: center;
+  display: flex;
+}
+
+.todo-con {
+  background-color: #10101d;
+  border-radius: 0.7rem;
+  width: 27rem;
   display: flex;
   flex-direction: column;
+  align-items: start;
+  padding: 1rem;
   gap: 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  gap: 0.6rem;
+}
+
+form #new-task-title {
+  width: calc(100% - 3rem);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding: 0.4rem 0;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+form button {
+  border-radius: 50%;
+  width: 2rem;
+  background-color: #f48fad;
+  box-shadow: 0 0 15px 2px rgba(254, 118, 191, 0.396);
   justify-content: center;
+  display: flex;
   align-items: center;
 }
 
-ul {
+form button svg {
+  height: 1.3rem;
+}
+
+h2 {
+  color: #fff;
+}
+
+.list {
+  width: 100%;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.list li {
+  border-radius: .4rem;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #191933;
+  color: #fff;
+}
+
+.list li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list li div button {
+  width: 1.4rem;
+}
+
+
+.list li div label {
+  cursor: pointer;
+  width: calc(100% - 1rem);
+  word-break: break-all;
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+ cursor: pointer;
 }

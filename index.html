@@ -2,18 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todelist with TS</title>
+    <title>Todo list with TS</title>
+    <link rel="stylesheet" href="./src/style.css" />
     <script type="module" src="./src/main.ts"></script>
   </head>
   <body>
     <div class="container">
-      <form id="new-task-form">
-        <input type="text" id="new-task-title" />
-        <button type="submit">Add</button>
-      </form>
-      <ul class="list"></ul>
+      <div class="todo-con">
+        <h2>TO DO LIST</h2>
+        <form id="new-task-form">
+          <input maxlength="100" placeholder="Add New Task" type="text" id="new-task-title" />
+          <button type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#fff"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </button>
+        </form>
+        <ul class="list"></ul>
+      </div>
     </div>
   </body>
 </html>
